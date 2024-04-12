@@ -31,9 +31,7 @@ impl Line {
 
         let mut parts = std::mem::take(&mut self.parts);
         for part in parts.iter_mut() {
-            if !part.group.is_sorted() {
-                part.group.sort_unstable();
-            }
+            part.group.sort_unstable();
         }
 
         parts.sort_unstable_by(|part1, part2| part1.group.0.cmp(&part2.group.0));
